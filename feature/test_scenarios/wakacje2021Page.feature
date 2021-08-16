@@ -1,0 +1,1 @@
+Feature: Page with info about courses

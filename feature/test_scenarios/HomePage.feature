@@ -69,3 +69,4 @@ Feature: Main page. Checking if everything working ok. Including navigation, bar
     Given I go to main page
     When I click on basket icon
     Then I see basket side menu
+    And I see that basket is empty
