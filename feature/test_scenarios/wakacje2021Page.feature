@@ -12,7 +12,7 @@ Feature: Page with info about courses
     And Pop-up window with "Szczegóły kursu" details appears
     Then I can close it by clicking "x"
 
-  Scenario: Szczgóły kursu closure by "x"
+  Scenario: Szczgóły kursu closure by clicking outside
     Given I'm on courses page
     When I click "Poznaj szczegóły" button
     And Pop-up window with "Szczegóły kursu" details appears
