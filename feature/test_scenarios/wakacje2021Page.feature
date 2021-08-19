@@ -35,7 +35,7 @@ Feature: Page with info about courses
     When I click on "<kup teraz>" button
     Then I add "<course>" to cart
     Examples:
-      | kup teraz | course  |
+      | kup teraz     | course    |
       | biologia-kup  | biologia  |
       | chemia-kup    | chemia    |
       | combo-kup     | both      |

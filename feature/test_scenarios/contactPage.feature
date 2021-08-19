@@ -34,6 +34,6 @@ Feature: Testing contact form
     And I see message about what's wrong
     Examples:
     | email_address |
-    | test.test |
-    | 12345@  |
-    | test@test |
+    | test.test     |
+    | 12345@        |
+    | test@test     |

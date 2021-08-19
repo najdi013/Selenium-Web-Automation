@@ -14,9 +14,9 @@ Feature: Login activities
     Then I can't log in
     And I see message that I couldn't do it
     Examples:
-    | fields  |
+    | fields      |
     | użytkownik  |
-    | hasło |
+    | hasło       |
 
   Scenario Outline: Login with incorrect data
     Given Login page
@@ -24,10 +24,10 @@ Feature: Login activities
     Then I can't log in
     And I see message that data are incorect
     Examples:
-    | użytkownik  | hasło |
-    | 123 | 123 |
-    | login | password  |
-    | admin | admin |
+    | użytkownik  | hasło     |
+    | 123         | 123       |
+    | login       | password  |
+    | admin       | admin     |
 
 
 #lost password
@@ -42,10 +42,10 @@ Feature: Login activities
     And I fill field with inccorect "<email>"
     Then I see message that data are incorrect
     Examples:
-    | data  |
-    | 12345 |
-    | 123@  |
-    | test@test |
+    | data                |
+    | 12345               |
+    | 123@                |
+    | test@test           |
     | najdi13@interia.pl  |
 
 
