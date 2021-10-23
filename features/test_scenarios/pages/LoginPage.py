@@ -7,31 +7,26 @@ from features.test_scenarios.pages.BasePage import BasePage
 class LoginPage(BasePage):
     PATH = 'C:\Program Files (x86)\Chromedriver.exe'
     URL = 'https://biochempro100.pl/moje-konto/'
-    # locators:
-    USERNAME = 'username'  # id
-    PASSWORD = 'password'  # id
-    LOGIN = 'login'  # name
-    ERROR = 'woocommerce-error'  # class
 
     def __init__(self, driver):
         super().__init__(driver)
+        self.driver = webdriver.Chrome(self.PATH)
 
     def open_site(self):
-        driver = webdriver.Chrome(self.PATH)
-        driver.get(self.URL)
-        driver.maximize_window()
-        driver.implicitly_wait(15)
+        self.driver.get(self.URL)
+        self.driver.maximize_window()
+        self.driver.implicitly_wait(5)
 
     def visible_element_by_id(self, id_locator):
         element = self.driver.find_element(By.ID, id_locator)
-        WebDriverWait(self.driver, 15).until(element.is_displayed())
+        WebDriverWait(self.driver, 10).until(element.is_displayed())
         if element.is_displayed():
             print("Element found")
         else:
             print("Element not found")
 
     def visible_element_by_name(self, name_locator):
-        element = self.driver.find_element_by_name(name_locator)
+        element = self.driver.find_element(By.NAME, name_locator)
         if element.is_displayed():
             print("Element found")
         else:
@@ -39,9 +34,17 @@ class LoginPage(BasePage):
 
     def visible_element_by_class(self, class_locator):
         element = self.driver.find_element(By.CLASS_NAME, class_locator)
-        WebDriverWait(self.driver, 15).until(element.is_displayed())
+        WebDriverWait(self.driver, 10).until(element.is_displayed())
         if element.is_displayed():
             print("Element found")
+        else:
+            print("Element not found")
+
+    def click_element_by_name(self, name_locator):
+        element = self.driver.find_element(By.NAME, name_locator)
+        if element.is_displayed():
+            print("Element found")
+            element.click()
         else:
             print("Element not found")
 
@@ -66,5 +69,7 @@ class Locators:
     # locators:
     username = 'username'  # id
     password = 'password'  # id
+    password_in = 'admin123'  # input
+    username_in = 'admin'  # input
     login = 'login'  # name
     error = 'woocommerce-error'  # class
