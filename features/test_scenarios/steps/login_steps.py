@@ -32,11 +32,8 @@ def login_click(context):
 
 @then("Login failed and invalid input data error is displayed")
 def failed_login(context):
-    if context.loc.username.is_displayed():
-        context.driver.implicitly_wait(5)
-        context.error_el = context.driver.find_element(By.CLASS_NAME, context.loc.error)
-        context.error_el.is_displayed()
-        return True
+    context.error_el = context.driver.find_element(By.CLASS_NAME, context.loc.error)
+    context.error_el.is_displayed()
 
 
 @then("Close the browser")
@@ -51,11 +48,8 @@ def input_password(context):
 
 @then("Login failed and empty username error is displayed")
 def empty_username(context):
-    if context.loc.username.is_displayed():
-        context.driver.implicitly_wait(5)
-        context.error_el = context.driver.find_element(By.CLASS_NAME, context.error_loc)
-        context.error_el.is_displayed()
-        return True
+    context.error_el = context.driver.find_element(By.CLASS_NAME, context.error_loc)
+    context.error_el.is_displayed()
 
 
 @step('Input username "admin"')
@@ -65,8 +59,15 @@ def input_username(context):
 
 @then("Login failed and empty password error is displayed")
 def empty_password(context):
-    if context.loc.username.is_displayed():
-        context.driver.implicitly_wait(5)
-        context.error_el = context.driver.find_element(By.CLASS_NAME, context.error_loc)
-        context.error_el.is_displayed()
-        return True
+    context.error_el = context.driver.find_element(By.CLASS_NAME, context.error_loc)
+    context.error_el.is_displayed()
+
+
+@step("Check if username is empty")
+def empty_username(context):
+    context.lp.clear_form(context.loc.username)
+
+
+@step("Check if password is empty")
+def empty_password(context):
+    context.lp.clear_form(context.loc.password)

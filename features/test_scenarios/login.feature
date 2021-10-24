@@ -18,12 +18,14 @@ Feature: Validate the login feature
 
   Scenario: Login with empty username
     And Input password "admin123"
+    And Check if username is empty
     And Click on the login button
     Then Login failed and empty username error is displayed
     Then Close the browser
 
     Scenario: Login with empty password
     And Input username "admin"
+    And Check if password is empty
     And Click on the login button
     Then Login failed and empty password error is displayed
     Then Close the browser
