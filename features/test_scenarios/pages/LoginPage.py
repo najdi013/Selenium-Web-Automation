@@ -34,7 +34,6 @@ class LoginPage(BasePage):
 
     def visible_element_by_class(self, class_locator):
         element = self.driver.find_element(By.CLASS_NAME, class_locator)
-        WebDriverWait(self.driver, 10).until(element.is_displayed())
         if element.is_displayed():
             print("Element found")
         else:
@@ -63,6 +62,9 @@ class LoginPage(BasePage):
 
     def wait(self, time=5):
         self.driver.implicitly_wait(time)
+
+    def quit(self):
+        self.driver.quit()
 
 
 class Locators:

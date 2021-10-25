@@ -1,5 +1,4 @@
 from behave import *
-from selenium.webdriver.common.by import By
 from features.test_scenarios.pages.LoginPage import LoginPage, Locators
 
 
@@ -32,13 +31,12 @@ def login_click(context):
 
 @then("Login failed and invalid input data error is displayed")
 def failed_login(context):
-    context.error_el = context.driver.find_element(By.CLASS_NAME, context.loc.error)
-    context.error_el.is_displayed()
+    context.lp.visible_element_by_class(context.loc.error)
 
 
 @then("Close the browser")
 def browser_close(context):
-    context.driver.quit()
+    context.lp.quit()
 
 
 @step('Input password "admin123"')
@@ -48,8 +46,7 @@ def input_password(context):
 
 @then("Login failed and empty username error is displayed")
 def empty_username(context):
-    context.error_el = context.driver.find_element(By.CLASS_NAME, context.error_loc)
-    context.error_el.is_displayed()
+    context.lp.visible_element_by_class(context.loc.error)
 
 
 @step('Input username "admin"')
@@ -59,8 +56,7 @@ def input_username(context):
 
 @then("Login failed and empty password error is displayed")
 def empty_password(context):
-    context.error_el = context.driver.find_element(By.CLASS_NAME, context.error_loc)
-    context.error_el.is_displayed()
+    context.lp.visible_element_by_class(context.loc.error)
 
 
 @step("Check if username is empty")
