@@ -1,9 +1,5 @@
 # Selenium Web Automation with Python, BDD
 This is my first simple framework/project/sample for automation web page testing. 
-## I used:
-- POM structure,
-- basic folder structure for BDD,
-- Selenium with Python.
 
 ## Scope of testing:
 ### Manual:
@@ -12,6 +8,10 @@ Bug raports with relevant screenshots are in *"bugs reports.pdf"* file.
 
 ### Automation:
 For this site I used only negative test cases, because I didn't get access for using account features. At first I focused only on login site, because I assumed that it will be good choice to gain some experience and skill.
+#### I used:
+- POM structure,
+- basic folder structure for BDD,
+- Selenium with Python.
 
 ## Future:
 In future I hope to add some new test cases and add other sites to my framework. I hope to improve and clean my code and maybe use some other technologies, like testing APIs. 
