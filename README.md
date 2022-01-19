@@ -12,6 +12,3 @@ For this site I used only negative test cases, because I didn't get access for u
 - POM structure,
 - basic folder structure for BDD,
 - Selenium with Python.
-
-## Future:
-In future I hope to add some new test cases and add other sites to my framework. I hope to improve and clean my code and maybe use some other technologies, like testing APIs. 
