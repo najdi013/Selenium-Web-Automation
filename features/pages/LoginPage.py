@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from features.test_scenarios.pages.BasePage import BasePage
+from features.pages.BasePage import BasePage
 
 
 class LoginPage(BasePage):

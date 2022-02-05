@@ -1,5 +1,5 @@
 from behave import *
-from features.test_scenarios.pages.LoginPage import LoginPage, Locators
+from features.pages.LoginPage import LoginPage, Locators
 
 
 @given('Launch browser')
